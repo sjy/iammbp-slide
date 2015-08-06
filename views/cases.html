@@ -1,0 +1,50 @@
+<div class="col-lg-12 app-header">
+    <h1 class="page-header">参考案例</h1>
+    <h2>球员</h2>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <div class="caption player">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail" >
+                <div class="caption player" style="background-position: 340px 10px">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4"  >
+            <div class="thumbnail">
+                <div class="caption player" style="background-position: 690px 10px">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail" style="padding-left: 60px">
+                <div class="caption player" style="background-position: 10px 320px">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail" >
+                <div class="caption player" style="background-position: 340px 320px">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4"  >
+            <div class="thumbnail">
+                <div class="caption player" style="background-position: 690px 320px">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h2>俱乐部</h2>
+        <div class="col-sm-3 col-md-2"  ng-repeat="i in [] |range:26">
+            <div class="thumbnail clubes">
+                <img ng-src="resources/images/clubes/escudo{{$index+1}}.jpg"class="img-responsive img-rounded"/>
+            </div>
+        </div>
+    </div>
+</div>
