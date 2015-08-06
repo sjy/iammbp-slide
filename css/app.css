@@ -150,7 +150,10 @@
 }
 
 .app-header {
-    background-image: url('');
+    background-image: url('../resources/images/logoiammbp.png');
+    background-repeat: no-repeat;
+    height: 100px;
+    background-size: 40%;
 }
 
 .player {
@@ -180,4 +183,27 @@
     right: 0;
     width: 100%;
     height: 555px;
+}
+.jumbotron-image-wrapper {
+    position:relative;
+}
+
+.jumbotron-image-wrapper .jumbotron-image {
+    width:100%
+}
+
+@media all and (max-width: 1200px) { /* screen size until 1200px */
+    body .my-text{
+        font-size: 1.5em; /* 1.5x default size */
+    }
+}
+@media all and (max-width: 1000px) { /* screen size until 1000px */
+    body .my-text{
+        font-size: 1.2em; /* 1.2x default size */
+    }
+}
+@media all and (max-width: 500px) { /* screen size until 500px */
+    body .my-text{
+        font-size: 0.8em; /* 0.8x default size */
+    }
 }

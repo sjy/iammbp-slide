@@ -6,8 +6,12 @@ var myApp = angular.module('mbpApp', [
     'ngRoute'
 ]);
 
-myApp.controller('mainController', ['$scope', function ($scope) {
-        $scope.greeting = 'Hola!';
+myApp.controller('mainController', ['$scope', '$location', '$anchorScroll',function ($scope, $location, $anchorScroll) {
+        $scope.pageName = '首页';
+        $scope.scrollTo = function (id) {
+            $location.hash(id);
+            $anchorScroll();
+        };
     }]);
 
 myApp.config(['$routeProvider', function ($routeProvider) {
@@ -28,17 +32,25 @@ myApp.config(['$routeProvider', function ($routeProvider) {
                     templateUrl: 'views/cases.html',
                     controller: 'mainController'
                 }).
+                when('/academy', {
+                    templateUrl: 'views/academy.html',
+                    controller: 'mainController'
+                }).
+                when('/coach', {
+                    templateUrl: 'views/coach.html',
+                    controller: 'mainController'
+                }).
                 otherwise({
                     redirectTo: '/'
                 });
     }
 ]);
 
-myApp.filter('range', function() {
-  return function(input, total) {
-    total = parseInt(total);
-    for (var i=0; i<total; i++)
-      input.push(i);
-    return input;
-  };
+myApp.filter('range', function () {
+    return function (input, total) {
+        total = parseInt(total);
+        for (var i = 0; i < total; i++)
+            input.push(i);
+        return input;
+    };
 });
