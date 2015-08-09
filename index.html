@@ -10,7 +10,7 @@
         <meta name="author" content="">
 
         <title>我是MBP</title>
-        <base href="/iammbp/"/>
+        <base href="./index.html"/>
         <link rel="shortcut icon" href="resources/images/favicon.ico" type="image/x-icon">
 
         <!-- Bootstrap Core CSS -->
@@ -49,8 +49,8 @@
                     <li ng-click="pageName = '足球学院'">
                         <a href="#/academy">足球学院</a>
                     </li>
-                    <li ng-click="pageName = '教练学校'">
-                        <a href="#/coach">教练学校</a>
+                    <li ng-click="pageName = '教练学院'">
+                        <a href="#/coach">教练学院</a>
                     </li>
                     <li ng-click="pageName = '参考案例'">
                         <a href="#/cases">参考案例</a>
@@ -60,62 +60,47 @@
                     </li>
                 </ul>
             </div>
-            <!-- /#sidebar-wrapper -->
-            
-            <!--            <nav class="navbar navbar-inverse navbar-static-top">
-                            <div class="container">
-                            </div>
-                        </nav>-->
-        
             <div id="page-content-wrapper">
-                <div class="container-fluid">
-                 
-                    <div class="row">
-<!--                        <div class="col-lg-6 col-xs-6 col-md-6 app-header">
-                        </div>-->
-                    </div>
-                    <div class="row" ng-view>
-
-                    </div>
+                <div class="container-fluid ng-view">
                 </div>
             </div>
 
+            <!-- footer -->
+            <footer class="footer" role="contentinfo">
+                <div class="container">
+                    <ul>
+                        <li ng-click="pageName = '首页'">
+                            <a href="#/home">首页</a>
+                        </li>
+                        <li>·</li>
+                        <li ng-click="pageName = '关于MBP'">
+                            <a href="#/about/">关于MBP</a>
+                        </li>
+                        <li>·</li>
+                        <li ng-click="pageName = '足球学院'">
+                            <a href="#/academy">足球学院</a>
+                        </li>
+                        <li>·</li>
+                        <li ng-click="pageName = '教练学院'">
+                            <a href="#/coach">教练学院</a>
+                        </li>
+                        <li>·</li>
+                        <li ng-click="pageName = '参考案例'">
+                            <a href="#/cases">参考案例</a>
+                        </li>
+                        <li>·</li>
+                        <li ng-click="pageName = '联系我们'">
+                            <a href="#/contact">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="container">
+                    <b>© 2015 iammbp.</b>
+                </div>
+            </footer>
+
         </div>
         <!-- /#wrapper -->
-
-        <!-- footer -->
-        <footer class="footer" role="contentinfo">
-            <div class="container">
-                <ul>
-                    <li ng-click="pageName = '首页'">
-                        <a href="#/home">首页</a>
-                    </li>
-                    <li>·</li>
-                    <li ng-click="pageName = '关于MBP'">
-                        <a href="#/about/">关于MBP</a>
-                    </li>
-                    <li>·</li>
-                    <li ng-click="pageName = '足球学院'">
-                        <a href="#/academy">足球学院</a>
-                    </li>
-                    <li>·</li>
-                    <li ng-click="pageName = '教练学校'">
-                        <a href="#/coach">教练学校</a>
-                    </li>
-                    <li>·</li>
-                    <li ng-click="pageName = '参考案例'">
-                        <a href="#/cases">参考案例</a>
-                    </li>
-                    <li>·</li>
-                    <li ng-click="pageName = '联系我们'">
-                        <a href="#/contact">联系我们</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="container">
-                <b>© 2015 iammbp.</b>
-            </div>
-        </footer>
 
         <!-- jQuery -->
         <script src="js/jquery.js"></script>
@@ -132,7 +117,25 @@
                 <script src="view2/view2.js"></script>-->
 
         <script>
+                                    $("nav ul li a[href^='#']").on('click', function (e) {
 
+                                        // prevent default anchor click behavior
+                                        e.preventDefault();
+
+                                        // store hash
+                                        var hash = this.hash;
+
+                                        // animate
+                                        $('html, body').animate({
+                                            scrollTop: $(hash).offset().top
+                                        }, 300, function () {
+
+                                            // when done, add hash to url
+                                            // (default click behaviour)
+                                            window.location.hash = hash;
+                                        });
+
+                                    });
         </script>
 
     </body>

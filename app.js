@@ -2,15 +2,16 @@
 
 // Declare app level module which depends on views, and components
 
-var myApp = angular.module('mbpApp', [
-    'ngRoute'
-]);
+var myApp = angular.module('mbpApp', ['ngRoute']);
 
-myApp.controller('mainController', ['$scope', '$location', '$anchorScroll',function ($scope, $location, $anchorScroll) {
+myApp.controller('mainController', ['$scope', '$location', '$anchorScroll', function ($scope, $location, $anchorScroll) {
         $scope.pageName = '首页';
         $scope.scrollTo = function (id) {
             $location.hash(id);
             $anchorScroll();
+        };
+        $scope.changeName = function (name) {
+            $scope.$parent.pageName = name;
         };
     }]);
 

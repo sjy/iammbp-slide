@@ -48,8 +48,7 @@
 
 #page-content-wrapper {
     width: 100%;
-    position: absolute;
-    padding: 15px;
+    padding: 0 15px;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -125,7 +124,7 @@
     }
 
     #page-content-wrapper {
-        padding: 20px;
+        padding: 0 20px;
         position: relative;
     }
 
@@ -138,7 +137,7 @@
 .footer {
     padding-top: 40px;
     padding-bottom: 40px;
-    margin-top: 100px;
+    margin-top: 20px;
     color: #767676;
     text-align: center;
     border-top: 1px solid #e5e5e5
@@ -192,18 +191,23 @@
     width:100%
 }
 
-@media all and (max-width: 1200px) { /* screen size until 1200px */
-    body .my-text{
-        font-size: 1.5em; /* 1.5x default size */
-    }
+.my-text{
+    position: absolute;
+    bottom: 0.3vw;
+    color: #000;
+    font-weight: bold;
+    letter-spacing: normal;
+    font-size: 1.1vw;
 }
-@media all and (max-width: 1000px) { /* screen size until 1000px */
-    body .my-text{
-        font-size: 1.2em; /* 1.2x default size */
-    }
+
+.media-logo {
+    width: 5vw;
 }
-@media all and (max-width: 500px) { /* screen size until 500px */
-    body .my-text{
-        font-size: 0.8em; /* 0.8x default size */
-    }
+
+.media-body .media-heading , .media-body .lead {
+    color:#F4A01A;
+}
+
+#wrapper th {
+    white-space: nowrap;
 }
