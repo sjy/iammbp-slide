@@ -1,5 +1,5 @@
 # iammbp-cn
 
-version one (simple sidebar)
-Env: netbeans
-Related tech: grunt, node, bootstrap, angular
+## Version (simple sidebar)
+## Dev Environment: netbeans
+## Related: grunt, node, bootstrap, angular
